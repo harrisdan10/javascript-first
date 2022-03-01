@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang = "eng">
+    <head>
+        <title>Vacation Destinations Wishlist</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container text-center">
+                <h1>Vacation Destinations WishList</h1> 
+                <p>Found exciting places to visit on your next vacation?
+                Use the form below to add them to your wishlist</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <form id="dest-details">
+                        <div class="form-group">
+                            <label for="dest">Destination name</label>
+                            <input id="dest" class="form-control" type="text" required="" minlength="2"
+                            placeholder="Enter the name of the destination">
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input id="location" class="form-control" type="text" required="" minlength="2"
+                            placeholder="Where is it located?">
+                        </div>
+                        <div class="form-group">
+                            <label for="imgURL">Photo</label>
+                            <input id="imgURL" class="form-control" type="url"
+                            placeholder="Enter an image url of the place">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea id="description" class="form-control" type="text"
+                            placeholder="Where is it located?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary submit_btn">Add to list</button>
+                    </form>
+                </div>
+                <div class="col-md-9">
+                    <h4 id="title" > Enter destination details</h4>
+                    <div id="dest-container"></div>
+                </div>
+            </div>
+        </div>
+        <script src="CardScript.js"></script>
+    </body>
+</html>
