@@ -5,14 +5,13 @@ window.document
 function handleSubmissions(e) {
     e.preventDefault();
 
-    let destination = e.target.elements["dest"].value;
+    let dest = e.target.elements["dest"].value;
     let location = e.target.elements["location"].value;
-    let photo = e.target.elements["imgURL"].value;
     let desc = e.target.elements["description"].value;
 
     resetFields(e.target);
 
-    let card = createCard( dest, location, photo, desc);
+    let card = createCard( dest, location, desc);
 
     let cardContainer = document.querySelector("#dest-container");
 
@@ -24,7 +23,7 @@ function handleSubmissions(e) {
     .querySelector("#dest-container")
     .appendChild(card);
 
-    function createCard(destination, location, photo, desc) {
+    function createCard(destination, location, desc) {
         let card = document.createElement("div");
         card.setAttribute("class", "card");
         card.style.width = "15rem";
@@ -34,14 +33,17 @@ function handleSubmissions(e) {
         let img = document.createElement("img");
         img.setAttribute("class", "card-img-top");
         img.setAttribute("alt", destination);
+
+        let photo = getRandomImage(destination);
+        img.setAttribute("src", photo);
       
-        let constantPhoto =
-          "https://cavchronicle.org/wp-content/uploads/2018/03/top-travel-destination-for-visas-900x504.jpg";
-        if (photo.length === 0) {
-          img.setAttribute("src", constantPhoto);
-        } else {
-          img.setAttribute("src", photo);
-        }
+        // let constantPhoto =
+        //   "https://cavchronicle.org/wp-content/uploads/2018/03/top-travel-destination-for-visas-900x504.jpg";
+        // if (photo.length === 0) {
+        //   img.setAttribute("src", constantPhoto);
+        // } else {
+        //   img.setAttribute("src", photo);
+        // }
       
         card.appendChild(img);
       
