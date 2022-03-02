@@ -35,15 +35,9 @@ function handleSubmissions(e) {
         img.setAttribute("alt", destination);
 
         let photo = getRandomImage(destination);
+        console.log(photo);
+        
         img.setAttribute("src", photo);
-      
-        // let constantPhoto =
-        //   "https://cavchronicle.org/wp-content/uploads/2018/03/top-travel-destination-for-visas-900x504.jpg";
-        // if (photo.length === 0) {
-        //   img.setAttribute("src", constantPhoto);
-        // } else {
-        //   img.setAttribute("src", photo);
-        // }
       
         card.appendChild(img);
       
